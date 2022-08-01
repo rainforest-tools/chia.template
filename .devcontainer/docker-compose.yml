@@ -1,0 +1,19 @@
+version: '3'
+services:
+  main:
+    container_name: main
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        - VARIANT=3.10-bullseye
+        - NODE_VERSION=none
+    volumes:
+      - .:/workspace:cached
+      # Persist VS Code extensions between rebuilds
+      - vscode-extensions:/root/.vscode-server/extensions
+      - ~/.zhistory:/home/vscode/.zhistory:cached
+    network_mode: host
+    command: /bin/sh -c "while sleep 1000; do :; done"
+volumes:
+  vscode-extensions:
