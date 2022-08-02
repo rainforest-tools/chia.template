@@ -10,6 +10,7 @@ services:
         - NODE_VERSION=none
     volumes:
       - .:/workspace:cached
+      - ~/.chia:/home/vscode/.chia:cached
       # Persist VS Code extensions between rebuilds
       - vscode-extensions:/root/.vscode-server/extensions
       - ~/.zhistory:/home/vscode/.zhistory:cached
