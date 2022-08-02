@@ -6,7 +6,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 
 RUN pipx install poetry
 RUN pipx install commitizen
-RUN pipx install chia-dev-tools
 
 # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="none"
